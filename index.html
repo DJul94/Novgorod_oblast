@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Новгородская обрасть </title>
+<link rel="stylesheet" type="text/css" href="style.css">
+ </head>
+    <body>
+    <div>
+       <h1 align=center> Новгородская область</h1>
+           </div>
+           <p></p>
+       <div>
+         <p align="justify">Новгородская область богата минеральными и радоновыми источниками, лечебными грязями. В числе природных достопримечательностей — Валдайский государственный природный национальный парк.</p>
+<p align="justify">На территории области имеются разнообразные полезные ископаемые нерудного происхождения. Наибольшее промышленное значение имеют месторождения огнеупорных глин, известняков, кварцевых песков, минеральных красок.</p>
+
+<p align="justify">Основное богатство области — леса, они занимают более 60% ее территории и представлены тремя типами: хвойные, смешанные и мелколиственные леса, имеется значительный резерв использования лесных ресурсов.</p>
+       <img src="https://img-cdn.tinkoffjournal.ru/main___velikiy_novgorod___shutterstock_1377600905-1.oxzmu6aa5eja.jpg"  height="343" width="610" >
+       </div>
+      <p></p>
+         <div>
+         
+         <h2>Заповедники</h2>
+       <ol>
+         <li>
+          Рдейский заповедник
+        </li>
+        <li>
+          Любытинский археологический музей-заповедник
+        </li>
+        </ol>
+        <p>
+          <a href="zapovedniki.html">Посмотреть расположение заповедников на карте.</a>
+        </p>
+        
+       
+         <h2>Национальный парки</h2>
+      
+          <p>
+          <a href="Valdayskiy.html">Валдайский национальный парк.</a>
+        </p>
+       
+        </div>
+       
+        
+ 
+
+<h1>Великий Новгород</h1>
+
+<p><a href="https://visitnovgorod.ru/citymap/index.htm"> Интерактивная карта Великого Новгорода.</a>
+</p>
+
+<div id="googleMap"></div>
+
+<script>
+function myMap() {
+var mapProp= {
+  center:new google.maps.LatLng(58.51,31.19),
+  zoom:7,
+};
+var g_map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+function place_marker(){
+ var marker = new google.maps.Marker({
+ position: {lat:58.51, lng:31.30},
+ map: g_map
+
+});
+};
+
+g_map.addListener('click', function(e) {
+  place_marker();
+});
+}
+
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKrLU_-vLVddwLWIxd0wku82OOPFtmUZo&callback=myMap"></script>
+
+</body>
+</html>

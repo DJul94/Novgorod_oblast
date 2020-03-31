@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+   <head>
+    <title>Zapovedniki</title>
+  <link rel = "stylesheet" href = "https://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"/>
+      <script src = "https://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+   </head>
+   
+   <body>
+      <div>  
+      <p> <a href="index.html">Главная</a> </p>
+      </div>
+
+      <div id = "map" style = "width:900px; height:600px"></div>
+      <script>
+         
+         var mapOptions = {
+            center: [58.10,30.48],
+            zoom: 7
+         }
+         var map = new L.map('map', mapOptions);
+         
+         var layer = new L.TileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+        
+         map.addLayer(layer);
+         
+        
+         var iconProp = {
+            iconUrl: 'https://img1.freepng.ru/20180320/dxw/kisspng-u-s-national-whitewater-center-pinus-contorta-tre-forest-icon-pictures-5ab08c22eacd68.8747338915215196509618.jpg',
+            iconSize: [20, 20]
+         }
+         var customIcon = L.icon(iconProp);
+
+         var markerProp = {
+            clickable: true,
+            draggable: true,
+            icon: customIcon
+         }
+         
+         var markerR = new L.Marker([57.29, 30.70], markerProp);
+         
+         markerR.bindPopup('Рдейский заповедник').openPopup();
+       
+         markerR.addTo(map);
+
+         var markerL = new L.Marker([58.48, 33.22], markerProp);
+         
+         markerL.bindPopup('Любытинский археологический заповедник').openPopup();
+       
+         markerL.addTo(map);
+
+      </script>
+   </body>
+   
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Valdaysky </title>
+<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.2.1/mapbox-gl.js'></script>
+  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.2.1/mapbox-gl.css' rel='stylesheet' />
+  <link rel ="stylesheet" href="https://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+            integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+            crossorigin=""></script>
+
+</head>
+    <body>
+      <div>  
+      <p> <a href="index.html">Главная</a> </p>
+      </div>
+
+      <div>
+       <h1 align=center> Национальный парк "Валдайский"</h1>
+      </div>
+
+<p align="justify">Давно мечтаете об отдыхе на природе? Хочется вырваться из городской суеты? Валдайский национальный парк отлично подойдёт для отдыха с палаткой или пешего экскурсионного маршрута. Не отказывайте себе в удовольствии насладиться природой уникального озерно-лесного комплекса Валдайской возвышенности. Здесь созданы все условия для развития организованного отдыха и туризма. </p>      
+<p align="justify">Национальный парк «Валдайский» составляет одно из звеньев формирующейся экологической сети в северо-западной части Европейской России. Он состоит членом Ассоциации заповедников и национальных парков Северо-Запада России, участвует в разработке и координации совместных программ по развитию особо охраняемых природных территорий этого региона.</p>
+<p align="justify">Парк получил международный авторитет. В 1994 году он принят в Федерацию природных национальных парков Европы, а в 2004 году ему присвоен высокий статус международного биосферного резервата в рамках программы ЮНЕСКО «Человек и биосфера».</p>
+<p align="justify"><img src="http://valdaypark.ru/wp-content/uploads/2018/04/DSC07609.jpg"  height="500" width="1500" >
+       </p>
+<p>
+          <a href="https://valdaypark.ru/">Подробнее о Национальном парке Вы можете узнать на официальном сайте.</a>
+        </p>
+<p></p>
+<div id="map" style="width:400;height:400px;"></div>
+
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoicnRrbWFwIiwiYSI6ImNqejJvbjloczA0dGczZG1uamRxNHNrM24ifQ.oJBnsuU9ILbPW7Ehz2cyPA';
+  var map = new mapboxgl.Map({
+    container: 'map', 
+    style: 'mapbox://styles/mapbox/streets-v11',
+    center: [32.40, 58.10], 
+    zoom: 7,
+  });
+ map.addControl(new mapboxgl.GeolocateControl({
+    positionOptions: {
+      enableHighAccuracy: true
+    },
+    trackUserLocation: true
+  }));
+
+var myJSONlayer = {
+              "type": "Feature",
+              "properties": { "id": 1, "Name": "example"},
+              "geometry": {
+                  "type": "Polygon",
+                  "coordinates": [[
+                      [32.83,58.26],
+                      [33.50,58.30],
+                      [32.90,57.55],
+                      [33.20,57.58]]
+                    ]
+              }
+
+          };
+var mylayer = new L.geoJSON(myJSONlayer);
+mylayer.addTo(map);
+
+</script>
+
+<p>Информация о парке:</p>
+<p>
+<li>Находится в северной части Валдайской возвышенности на территориях Окуловского, Валдайского и Демянского районов</li>
+<li>Насчитывает около 200 озёр</li>
+<li>56 озёр с площадью более 20 га</li>
+<li>Площадь парка 1585 кв.км </li>
+</p></ul>
+</body>
+</html>
